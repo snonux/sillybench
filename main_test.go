@@ -2,7 +2,13 @@ package main
 
 import "testing"
 
-func BenchmarkSilly(b *testing.B) {
+func BenchmarkCPUSilly1(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		_ = i * i
+	}
+}
+
+func BenchmarkCPUSilly2(b *testing.B) {
 	var sillyResult float64
 	for i := 0; i < b.N; i++ {
 		sillyResult += float64(i)

@@ -1,0 +1,118 @@
+APP 2025-04-02T21:32:24.132Z --> triggerCharacters: | ["{","("," "]
+
+APP 2025-04-02T21:32:24.139Z --> received request: | {"jsonrpc":"2.0","method":"initialize","params":{"capabilities":{"general":{"positionEncodings":["utf-8","utf-32","utf-16"]},"textDocument":{"codeAction":{"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["","quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"dataSupport":true,"disabledSupport":true,"isPreferredSupport":true,"resolveSupport":{"properties":["edit","command"]}},"completion":{"completionItem":{"deprecatedSupport":true,"insertReplaceSupport":true,"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"snippetSupport":true,"tagSupport":{"valueSet":[1]}},"completionItemKind":{}},"formatting":{"dynamicRegistration":false},"hover":{"contentFormat":["markdown"]},"inlayHint":{"dynamicRegistration":false},"publishDiagnostics":{"tagSupport":{"valueSet":[1,2]},"versionSupport":true},"rename":{"dynamicRegistration":false,"honorsChangeAnnotations":false,"prepareSupport":true},"signatureHelp":{"signatureInformation":{"activeParameterSupport":true,"documentationFormat":["markdown"],"parameterInformation":{"labelOffsetSupport":true}}}},"window":{"workDoneProgress":true},"workspace":{"applyEdit":true,"configuration":true,"didChangeConfiguration":{"dynamicRegistration":false},"didChangeWatchedFiles":{"dynamicRegistration":true,"relativePatternSupport":false},"executeCommand":{"dynamicRegistration":false},"fileOperations":{"didRename":true,"willRename":true},"inlayHint":{"refreshSupport":false},"symbol":{"dynamicRegistration":false},"workspaceEdit":{"documentChanges":true,"failureHandling":"abort","normalizesLineEndings":false,"resourceOperations":["create","rename","delete"]},"workspaceFolders":true}},"clientInfo":{"name":"helix","version":"25.01.1 (db187c48)"},"processId":1574298,"rootPath":"/home/paul/src/sillybench","rootUri":"file:///home/paul/src/sillybench","workspaceFolders":[{"name":"sillybench","uri":"file:///home/paul/src/sillybench"}]},"id":0}
+
+APP 2025-04-02T21:32:24.140Z --> sent request | {"jsonrpc":"2.0","id":0,"result":{"capabilities":{"codeActionProvider":true,"executeCommandProvider":{"commands":["resolveDiagnostics","generateDocs","improveCode","refactorFromComment","writeTest"]},"completionProvider":{"resolveProvider":false,"triggerCharacters":["{","("," "]},"textDocumentSync":{"change":1,"openClose":true}}}}
+
+APP 2025-04-02T21:32:24.141Z --> received didOpen | language: bash
+
+APP 2025-04-02T21:32:25.172Z --> received didChange | language: bash | contentVersion: 1 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:25.632Z --> received didChange | language: bash | contentVersion: 2 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:26.165Z --> received didChange | language: bash | contentVersion: 3 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:27.824Z --> received didChange | language: bash | contentVersion: 4 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:28.004Z --> received didChange | language: bash | contentVersion: 5 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:30.158Z --> received request: | {"jsonrpc":"2.0","method":"textDocument/completion","params":{"context":{"triggerKind":1},"position":{"character":0,"line":0},"textDocument":{"uri":"file:///home/paul/src/sillybench/run.sh"}},"id":1}
+
+APP 2025-04-02T21:32:30.360Z --> running completion on buffer | {"uri":"file:///home/paul/src/sillybench/run.sh","text":"go test -bench=. -benchtime=100s\n","languageId":"bash","version":5}
+
+APP 2025-04-02T21:32:30.361Z --> calling completion event
+
+APP 2025-04-02T21:32:30.361Z --> sending diagnostics | [{"message":"Fetching completion...","severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":1,"character":0}}}]
+
+APP 2025-04-02T21:32:30.361Z --> sent request | {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///home/paul/src/sillybench/run.sh","diagnostics":[{"message":"Fetching completion...","severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":1,"character":0}},"source":"helix-gpt"}]}}
+
+APP 2025-04-02T21:32:30.361Z --> copilot | completion request
+
+APP 2025-04-02T21:32:30.363Z --> fetch | /copilot_internal/v2/token
+
+APP 2025-04-02T21:32:30.761Z --> response | https://api.github.com/copilot_internal/v2/token | 200
+
+APP 2025-04-02T21:32:30.763Z --> fetch | /v1/engines/copilot-codex/completions
+
+APP 2025-04-02T21:32:31.071Z --> received didChange | language: bash | contentVersion: 6 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:31.172Z --> response | https://copilot-proxy.githubusercontent.com/v1/engines/copilot-codex/completions | 200
+
+APP 2025-04-02T21:32:31.174Z --> completion hints: | // Args: ["/home/paul/src/sillybench/run.sh"]
+
+APP 2025-04-02T21:32:31.174Z --> sent request | {"jsonrpc":"2.0","id":1,"result":{"isIncomplete":false,"items":[{"label":"// Args: [\"/home/paul/src/sillybench/run.sh\"]","kind":1,"preselect":true,"detail":"// Args: [\"/home/paul/src/sillybench/run.sh\"]","insertText":"// Args: [\"/home/paul/src/sillybench/run.sh\"]","insertTextFormat":1,"additionalTextEdits":[{"newText":"","range":{"start":{"line":0,"character":45},"end":{"line":0,"character":77}}}]}]}}
+
+APP 2025-04-02T21:32:31.174Z --> sent request | {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///home/paul/src/sillybench/run.sh","diagnostics":[]}}
+
+APP 2025-04-02T21:32:31.900Z --> received didChange | language: bash | contentVersion: 7 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:32.211Z --> received didChange | language: bash | contentVersion: 8 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:32.217Z --> received request: | {"jsonrpc":"2.0","method":"textDocument/completion","params":{"context":{"triggerKind":1},"position":{"character":3,"line":0},"textDocument":{"uri":"file:///home/paul/src/sillybench/run.sh"}},"id":2}
+
+APP 2025-04-02T21:32:32.418Z --> running completion on buffer | {"uri":"file:///home/paul/src/sillybench/run.sh","text":"#!/go test -bench=. -benchtime=100s\n","languageId":"bash","version":8}
+
+APP 2025-04-02T21:32:32.419Z --> calling completion event
+
+APP 2025-04-02T21:32:32.419Z --> sending diagnostics | [{"message":"Fetching completion...","severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":1,"character":0}}}]
+
+APP 2025-04-02T21:32:32.419Z --> sent request | {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///home/paul/src/sillybench/run.sh","diagnostics":[{"message":"Fetching completion...","severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":1,"character":0}},"source":"helix-gpt"}]}}
+
+APP 2025-04-02T21:32:32.419Z --> copilot | completion request
+
+APP 2025-04-02T21:32:32.420Z --> fetch | /v1/engines/copilot-codex/completions
+
+APP 2025-04-02T21:32:32.492Z --> received didChange | language: bash | contentVersion: 9 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:32.554Z --> response | https://copilot-proxy.githubusercontent.com/v1/engines/copilot-codex/completions | 200
+
+APP 2025-04-02T21:32:32.555Z --> completion hints: | bin/bash
+
+APP 2025-04-02T21:32:32.555Z --> sent request | {"jsonrpc":"2.0","id":2,"result":{"isIncomplete":false,"items":[{"label":"bin/bash","kind":1,"preselect":true,"detail":"bin/bash","insertText":"bin/bash","insertTextFormat":1,"additionalTextEdits":[{"newText":"","range":{"start":{"line":0,"character":11},"end":{"line":0,"character":43}}}]}]}}
+
+APP 2025-04-02T21:32:32.555Z --> sent request | {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///home/paul/src/sillybench/run.sh","diagnostics":[]}}
+
+APP 2025-04-02T21:32:32.618Z --> received didChange | language: bash | contentVersion: 10 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:32.751Z --> received didChange | language: bash | contentVersion: 11 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:33.024Z --> received didChange | language: bash | contentVersion: 12 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:33.031Z --> received request: | {"jsonrpc":"2.0","method":"textDocument/completion","params":{"context":{"triggerKind":1},"position":{"character":7,"line":0},"textDocument":{"uri":"file:///home/paul/src/sillybench/run.sh"}},"id":3}
+
+APP 2025-04-02T21:32:33.232Z --> running completion on buffer | {"uri":"file:///home/paul/src/sillybench/run.sh","text":"#!/bin/go test -bench=. -benchtime=100s\n","languageId":"bash","version":12}
+
+APP 2025-04-02T21:32:33.232Z --> calling completion event
+
+APP 2025-04-02T21:32:33.232Z --> sending diagnostics | [{"message":"Fetching completion...","severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":1,"character":0}}}]
+
+APP 2025-04-02T21:32:33.233Z --> sent request | {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///home/paul/src/sillybench/run.sh","diagnostics":[{"message":"Fetching completion...","severity":3,"range":{"start":{"line":0,"character":0},"end":{"line":1,"character":0}},"source":"helix-gpt"}]}}
+
+APP 2025-04-02T21:32:33.233Z --> copilot | completion request
+
+APP 2025-04-02T21:32:33.233Z --> fetch | /v1/engines/copilot-codex/completions
+
+APP 2025-04-02T21:32:33.255Z --> received didChange | language: bash | contentVersion: 13 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:33.360Z --> received didChange | language: bash | contentVersion: 14 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:33.423Z --> response | https://copilot-proxy.githubusercontent.com/v1/engines/copilot-codex/completions | 200
+
+APP 2025-04-02T21:32:33.423Z --> completion hints: | bash
+
+APP 2025-04-02T21:32:33.424Z --> sent request | {"jsonrpc":"2.0","id":3,"result":{"isIncomplete":false,"items":[{"label":"bash","kind":1,"preselect":true,"detail":"bash","insertText":"bash","insertTextFormat":1,"additionalTextEdits":[{"newText":"","range":{"start":{"line":0,"character":11},"end":{"line":0,"character":43}}}]}]}}
+
+APP 2025-04-02T21:32:33.424Z --> sent request | {"jsonrpc":"2.0","method":"textDocument/publishDiagnostics","params":{"uri":"file:///home/paul/src/sillybench/run.sh","diagnostics":[]}}
+
+APP 2025-04-02T21:32:33.608Z --> received didChange | language: bash | contentVersion: 15 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:34.211Z --> received didChange | language: bash | contentVersion: 16 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:35.049Z --> received didChange | language: bash | contentVersion: 17 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:35.366Z --> received didChange | language: bash | contentVersion: 18 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:35.686Z --> received didChange | language: bash | contentVersion: 19 | uri: file:///home/paul/src/sillybench/run.sh
+
+APP 2025-04-02T21:32:36.713Z --> received request: | {"jsonrpc":"2.0","method":"shutdown","id":4}
+
